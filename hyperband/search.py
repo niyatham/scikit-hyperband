@@ -422,7 +422,7 @@ class HyperbandSearchCV(BaseSearchCV):
         **fit_params : dict of string -> object
             Parameters passed to the ``fit`` method of the estimator
         """
-        super().fit(X, y, groups, **fit_params)
+        super().fit(X, y, groups)
 
         s_max = int(np.floor(np.log(self.max_iter / self.min_iter) / np.log(self.eta)))
         B = (s_max + 1) * self.max_iter
