@@ -19,7 +19,7 @@ except ImportError:
     sys.exit(1)
 
 setup(name='scikit-hyperband',
-      version='0.0.1',
+      version='0.0.2',
       description='A scikit-learn compatible implementation of hyperband for model selection',
       author='Thomas Huijskens',
       packages=find_packages(),
