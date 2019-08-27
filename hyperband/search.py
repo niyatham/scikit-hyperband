@@ -335,7 +335,7 @@ class HyperbandSearchCV(BaseSearchCV):
         self.random_state = random_state
 
         super(HyperbandSearchCV, self).__init__(
-            estimator=estimator, scoring=scoring, fit_params=None,
+            estimator=estimator, scoring=scoring,
             n_jobs=n_jobs, iid=iid, refit=refit, cv=cv, verbose=verbose,
             pre_dispatch=pre_dispatch, error_score=error_score,
             return_train_score=return_train_score)
@@ -402,7 +402,7 @@ class HyperbandSearchCV(BaseSearchCV):
                 print('Skipping the last {0} successive halving iterations'
                       .format(self.skip_last))
 
-    def fit(self, X, y=None, groups=None, **fit_params):
+    def fit(self, X, y=None, groups=None):
         """Run fit with all sets of parameters.
 
         Parameters
@@ -418,9 +418,6 @@ class HyperbandSearchCV(BaseSearchCV):
         groups : array-like, with shape (n_samples,), optional
             Group labels for the samples used while splitting the dataset into
             train/test set.
-
-        **fit_params : dict of string -> object
-            Parameters passed to the ``fit`` method of the estimator
         """
         super().fit(X, y, groups)
 
